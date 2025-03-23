@@ -1,55 +1,58 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Cycle Tracker</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="loading.jpg" />
-  </head>
-  <body>
-    <h1>Period tracker</h1>
-    <form>
-      <fieldset>
-        <legend>Enter your period start and end date</legend>
-        <p>
-          <label for="start-date">Start date</label>
-          <input type="date" id="start-date" required />
-        </p>
-        <p>
-          <label for="end-date">End date</label>
-          <input type="date" id="end-date" required />
-        </p>
-      </fieldset>
-      <p>
-        <button type="submit">Add Period</button>
-      </p>
-    </form>
-    <section id="past-periods">
-      <!-- <h2>Past periods</h2>
-      <ul>
-        <li>From 01/01/2024 to 01/06/2024</li>
-        <li>From 01/29/2024 to 02/04/2024</li>
-      </ul> -->
-    </section>
-    <script src="app.js" defer></script>
-    <script>
-      // Does "serviceWorker" exist
-      if ("serviceWorker" in navigator) {
-        // If yes, we register the service worker
-        // Passing the filename where that worker is defined.
-        navigator.serviceWorker.register("sw.js").then(
-          (registration) => {
-            console.log("Service worker registration successful:", registration);
-          },
-          (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-          },
-        );
-      } else {
-        console.error("Service workers are not supported.");
-      }
-    </script>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Tagged Note App</title>
+        <link rel="stylesheet" href="style.css?v=124" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="icon" href="loading.jpg" />
+    </head>
+    <body>
+        <div class="app-container">
+            <h1>Notes</h1>
+            <div class="input-container">
+                <pre id="main_input_div" class="highlighted-input"></pre>
+                <textarea id="main_input" class="highlighted-input"></textarea>
+            </div>
+            <section id="notes">
+            </section>
+        </div>
+
+        <div class="bottom-ribbon" id="ribbon">
+            <div id="tagList">
+                <!--<button>tag1</button>-->
+                <!--<button>tag2</button>-->
+                <!--<button>asdf</button>-->
+            </div>
+            <div id="menu">
+                <button id="btnClearFilters">Clear</button>
+                <button id="btnExport">Export</button>
+                <button id="btnSaveNote">Save Note</button>
+            </div>
+        </div>
+
+        <div id="contextmenu" style="display: none">
+            <button id="contextmenu_btnDelete">Delete!</button>
+        </div>
+
+        <script src="app.js" defer></script>
+        <script>
+            // Does "serviceWorker" exist
+            if ("serviceWorker" in navigator) {
+                // If yes, we register the service worker
+                // Passing the filename where that worker is defined.
+                navigator.serviceWorker.register("sw.js").then(
+                    (registration) => {
+                        console.log("Service worker registration successful:", registration);
+                    },
+                    (error) => {
+                        console.error(`Service worker registration failed: ${error}`);
+                    },
+                );
+            } else {
+                console.error("Service workers are not supported.");
+            }
+        </script>
+    </body>
 </html>

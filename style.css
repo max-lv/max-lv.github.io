@@ -1,7 +1,18 @@
+
+textarea {
+  display: block;
+  width: 100%;
+}
+
 body {
-  margin: 1vh 1vw;
+  margin: 0 0;
   background-color: #efe;
 }
+
+.app-container {
+  margin: 1vh 1vw;
+}
+
 ul,
 fieldset,
 legend {
@@ -20,4 +31,72 @@ legend {
 }
 li:nth-of-type(even) {
   background-color: inherit;
+}
+
+#ribbon {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: black;
+}
+
+.bottom-ribbon > #menu {
+    float: right;
+}
+
+.bottom-ribbon > #tagList > div {
+    overflow-y: scroll;
+    white-space: nowrap;
+    height: 3rem;
+}
+
+.bottom-ribbon > #tagList > div > button {
+    display: inline-block;
+    margin: 5px;
+}
+
+.highlighted-input {
+    margin: unset;
+    padding: unset;
+    border: 1px solid black;
+    font-size: 10pt;
+    font-family: mono;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    width: 100%;
+    height: 150px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.input-container:last-child {
+    margin-bottom: 70px;
+}
+
+pre.highlighted-input {
+    color: black;
+    background: #ded;
+}
+
+textarea.highlighted-input {
+    position: absolute;
+    top: 0;
+    background: unset;
+    color: rgba(0,0,0,0.0);
+    caret-color: black;
+    resize: none;
+}
+
+span.tag {
+    color: royalblue;
+}
+
+#contextmenu {
+    background: red;
+    width: 100px;
+    height: 50px;
+    position: absolute;
 }

@@ -1,5 +1,5 @@
 const VERSION = "v1.0.0";
-const CACHE_NAME = `period-tracker-${VERSION}`;
+const CACHE_NAME = `tagged-notes-${VERSION}`;
 
 const APP_STATIC_RESOURCES = [
   "/",
