@@ -1,18 +1,4 @@
-// + parse tags from notes
-// + filter page, where I can filter notes by tags
-// - page where I can see counts of notes for each tag (or group of tags, ex: #тренировки #отжимания)
-// + auto-extend height of `pre+textarea` when typing
-// + display old notes with `pre+textarea` (create function for custom element for ease)
-// + edit old notes
-// + reverse add order (append notes from top, or render them in reverse)
-// - clear visual_div after "save_note"
-// - ignore bold/italic tags if they are not surrounded by white space
-// - script formatting like `some_function`
-// - bonus: hide ** and __ in bold and italic texts when not editing a note
-// - bonus: render checkboxes
-// + bonus: partial markdown (bold, italic)
-// - bonus: markdown headlines
-//
+
 // create constants for the form and the form controls
 const notesContainer = document.getElementById("notes");
 
@@ -56,7 +42,8 @@ function save_note(raw_text) {
 
     storeNewNote(note);
     console.log(note);
-    main_input.value = ""
+    main_input.value = "";
+    visual_div.innerHTML = "";
 }
 
 function input_note_event(note_idx, input, visual_div) {
