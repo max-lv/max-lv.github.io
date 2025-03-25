@@ -5,7 +5,7 @@ const notesContainer = document.getElementById("notes");
 // Add the storage key as an app-wide constant
 const STORAGE_KEY = "notes";
 
-const re_tag = /((?:^|\s)[#@]([\w\p{Letter}\-]+))/ug;
+const re_tag = /((?:^|\s|<br>)[#@]([\w\p{Letter}\-]+))/ug;
 
 let global_filter = [];
 let global_selected_for_delete = 0;
