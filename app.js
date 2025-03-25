@@ -43,7 +43,7 @@ function save_note(raw_text) {
     storeNewNote(note);
     console.log(note);
     main_input.value = "";
-    visual_div.innerHTML = "";
+    main_input_div.innerHTML = "";
 }
 
 function input_note_event(note_idx, input, visual_div) {
@@ -97,9 +97,11 @@ function contextmenu_event(note_idx) {
 
         contextmenu.style.left = event.pageX - 50 + "px";
         contextmenu.style.top = event.pageY - 60 + "px";
-        contextmenu.style.display = "block";
+        contextmenu.classList.add("contextmenu-active");
         global_selected_for_delete = note_idx;
-        setTimeout(() => { contextmenu.style.display = "none" }, 5000);
+        setTimeout(() => {
+            contextmenu.classList.remove("contextmenu-active");
+        }, 5000);
     }
 }
 
